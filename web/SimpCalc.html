@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="basic2.css" type="text/css">
+    <style>
+        a{
+            text-decoration: none;
+                color: white;
+                background-color: navy;
+                border-radius: 5px;
+                font-size: 18px;
+                
+        }
+   
+    </style>
+    </head>
+    <body>
+        <form method="get" action="calculator"> 
+            <div align="center">
+                <table cellspacing="5" cellpadding="20">
+                    <tr><td colspan="2"><h2>Simple Calculator</h2></td></tr>
+                    <tr>
+                        <td><label>Enter first number:</label></td>
+                        <td><input type="text" name="fstno"></td>
+                    </tr>
+                    <tr>
+                        <td><label>Select Operator:</label></td>
+                        <td><select name="operator">
+                        <option value="Operator">Operator</option>
+                        <option value="+">+</option>
+                        <option value="-">-</option>
+                        <option value="*">*</option>
+                        <option value="/">/</option>
+                        </select></td>
+                    </tr>
+                    <tr>
+                        <td><label>Enter second number</label></td>
+                        <td><input type="text" name="sndno"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><input type="submit" value="Calculate" class="btn">
+                                        <input type="reset" value="Reset" class="btn">
+                                        <a href="Programlist.html">Back</a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </form>
+    </body>
+</html>
