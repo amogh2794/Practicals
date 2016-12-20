@@ -86,9 +86,18 @@ public class resultstatus extends HttpServlet {
             String seme; 
             out.println("<!DOCTYPE html>");
             out.println("<html>");
+            out.println("<head>");
+            out.println("<script>function showdetails()"
+                        + "{"
+                        + "document.getElementById('div1').style.display='none';"
+                        + "document.getElementById('div2').style.display='block'; "
+                        
+                        + "}"
+                        + "</script></head>");
+            out.println("</head>");
             out.println("<body style=\"color:white;background-color:#689F38;font-family:Arial;font-size:25px;align:center;\">");                    
             out.println("<h1 align='center'>Marksheet</h1><br>");
-            out.println("<table border=1>");
+            out.println("<div style=\"color:#689F38;background-color:white;font-family:Arial;align:center;border-radius:5px;\"id=\"div1\">");
             
             
             while (rs.next()) {
@@ -165,20 +174,25 @@ public class resultstatus extends HttpServlet {
              }
             
               // if(sub1x<50 || sub2x<50||sub3x<50 || sub4x<50||sub5x<50 || sub1i<50||sub2i<50 || sub3i<50||sub4i<50 || sub5i<50||pr1<50||pr2<50||pr3<50)
-             //{
-                out.println("<tr style=\"color:white;\"><th>Seat No</th><td>"+rs.getString("seatno")+"</td><td colspan='5'>Semister:"+semi+"</td></tr>");
-                out.println("<tr style=\"color:white;\"><th>Name</th><td>"+rs.getString("firstname")+" "+rs.getString("lastname")+"</td><td>Course:"+rs.getString("course")+"</td><td colspan='6'>Batch:"+rs.getString("batch")+"</td></tr>");
+             //{out.println("<div id=\"div1\">");
+                out.println("<h2>Congatulations "+rs.getString("firstname")+" you have secured "+grd+" grade</h2><br>");
+                out.println("<input type=\"submit\" name=\"viewmks\" value=\"View Marks\" onclick=\"showdetails()\">");
+                out.println("</div>");
+                out.println("<div style=\"color:#689F38;background-color:white;font-family:TimesNewRoman;align:center; display:none;border-radius:5px;\"id=\"div2\">"+"<br>");
+                out.println("<table border=1>");
+                out.println("<tr style=\"color:#689F38;\"><th>Seat No</th><td>"+rs.getString("seatno")+"</td><td colspan='5'>Semister:"+semi+"</td></tr>");
+                out.println("<tr style=\"color:#689F38;\"><th>Name</th><td>"+rs.getString("firstname")+" "+rs.getString("lastname")+"</td><td>Course:"+rs.getString("course")+"</td><td colspan='4'>Batch:"+rs.getString("batch")+"</td></tr>");
                 out.println("<tr><th>SUBJECT-Name</th><th>External_Mini</th><th>External_max</th><th>External Marks Obtained</th><th>Internal_Mini</th><th>Internal_max</th><th>Internal Marks Obtained</th></tr>");              
-                out.println("<tr style=\"color:white;\"><td>"+sub1name+"</td><td>25</td><td>50</td><td>"+sub1x+"</td><td>25</td><td>50</td><td>"+sub1i+"</td></tr>");
-                out.println("<tr style=\"color:white;\"><td>"+sub2name+"</td><td>25</td><td>50</td><td>"+sub2x+"</td><td>25</td><td>50</td><td>"+sub2i+"</td></tr>");
-                out.println("<tr style=\"color:white;\"><td>"+sub3name+"</td><td>25</td><td>50</td><td>"+sub3x+"</td><td>25</td><td>50</td><td>"+sub3i+"</td></tr>");
-                out.println("<tr style=\"color:white;\"><td>"+sub4name+"</td><td>25</td><td>50</td><td>"+sub4x+"</td><td>25</td><td>50</td><td>"+sub4i+"</td></tr>");
-                out.println("<tr style=\"color:white;\"><td>"+sub5name+"</td><td>25</td><td>50</td><td>"+sub5x+"</td><td>25</td><td>50</td><td>"+sub5i+"</td></tr>");
-                out.println("<tr style=\"color:white;\"><td>"+sub1pract+"</td><td>25</td><td>50</td><td>"+pr1+"</td><td>--</td><td>--</td><td>--</td></tr>");
-                out.println("<tr style=\"color:white;\"><td>"+sub2pract+"</td><td>25</td><td>50</td><td>"+pr2+"</td><td>--</td><td>--</td><td>--</td></tr>");
-                out.println("<tr style=\"color:white;\"><td>"+sub3pract+"</td><td>25</td><td>50</td><td>"+pr3+"</td><td>--</td><td>--</td><td>--</td></tr>");
-                out.println("<tr style=\"color:white;\"><td colspan='3'>Total Marks: 750</td><td colspan='4'>Marks Obtained:"+total+"</td>");
-                out.println("<tr style=\"color:white;\"><td colspan='6'>Grade</td><td>"+grd+"</td></tr>");
+                out.println("<tr style=\"color:#689F38;\"><td>"+sub1name+"</td><td>25</td><td>50</td><td>"+sub1x+"</td><td>25</td><td>50</td><td>"+sub1i+"</td></tr>");
+                out.println("<tr style=\"color:#689F38;\"><td>"+sub2name+"</td><td>25</td><td>50</td><td>"+sub2x+"</td><td>25</td><td>50</td><td>"+sub2i+"</td></tr>");
+                out.println("<tr style=\"color:#689F38;\"><td>"+sub3name+"</td><td>25</td><td>50</td><td>"+sub3x+"</td><td>25</td><td>50</td><td>"+sub3i+"</td></tr>");
+                out.println("<tr style=\"color:#689F38;\"><td>"+sub4name+"</td><td>25</td><td>50</td><td>"+sub4x+"</td><td>25</td><td>50</td><td>"+sub4i+"</td></tr>");
+                out.println("<tr style=\"color:#689F38;\"><td>"+sub5name+"</td><td>25</td><td>50</td><td>"+sub5x+"</td><td>25</td><td>50</td><td>"+sub5i+"</td></tr>");
+                out.println("<tr style=\"color:#689F38;\"><td>"+sub1pract+"</td><td>25</td><td>50</td><td>"+pr1+"</td><td>--</td><td>--</td><td>--</td></tr>");
+                out.println("<tr style=\"color:#689F38;\"><td>"+sub2pract+"</td><td>25</td><td>50</td><td>"+pr2+"</td><td>--</td><td>--</td><td>--</td></tr>");
+                out.println("<tr style=\"color:#689F38;\"><td>"+sub3pract+"</td><td>25</td><td>50</td><td>"+pr3+"</td><td>--</td><td>--</td><td>--</td></tr>");
+                out.println("<tr style=\"color:#689F38;\"><td colspan='3'>Total Marks: 750</td><td colspan='4'>Marks Obtained:"+total+"</td>");
+                out.println("<tr style=\"color:#689F38;\"><td colspan='6'>Grade</td><td>"+grd+"</td></tr>");
              
              //}
                /* else
@@ -194,6 +208,7 @@ public class resultstatus extends HttpServlet {
                 out.println("<tr style=\"color:black;\"><td>Grade</td><td>"+grd+"</td></tr>");
              }*/
                  out.println("</table><br>");
+                 out.println("</div>");
                  out.println("<a href=olresult.html style=\"color:white; text-decoration:none;\">Back</a>");
                  out.println("</body>");
             out.println("</html>");

@@ -96,6 +96,18 @@
         <servlet-name>resdetails</servlet-name>
         <servlet-class>resdetails</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>mquiz</servlet-name>
+        <servlet-class>mquiz</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>paydetails</servlet-name>
+        <servlet-class>paydetails</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>addemp</servlet-name>
+        <servlet-class>addemp</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>NewServlet</servlet-name>
         <url-pattern>/NewServlet</url-pattern>
@@ -183,6 +195,18 @@
     <servlet-mapping>
         <servlet-name>resdetails</servlet-name>
         <url-pattern>/resdetails</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>mquiz</servlet-name>
+        <url-pattern>/mquiz</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>paydetails</servlet-name>
+        <url-pattern>/paydetails</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>addemp</servlet-name>
+        <url-pattern>/addemp</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
