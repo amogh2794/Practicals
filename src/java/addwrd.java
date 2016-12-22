@@ -6,18 +6,17 @@
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.*;
-import java.sql.DriverManager;
-import java.sql.SQLException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.sql.*;
+
 /**
  *
  * @author Amogh
  */
-public class loginjdb extends HttpServlet {
+public class addwrd extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -36,10 +35,10 @@ public class loginjdb extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet loginjdb</title>");            
+            out.println("<title>Servlet addwrd</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet loginjdb at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet addwrd at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -71,44 +70,55 @@ public class loginjdb extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String usrn=request.getParameter("un");
-        String pass=request.getParameter("pd");
+        String wd=request.getParameter("txtnword");
+        String mn=request.getParameter("txtmn");
         try(PrintWriter out = response.getWriter())
-        {
-            try       
-            {          
-            Class.forName("com.mysql.jdbc.Driver");              
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost/registration","root","");  
-            PreparedStatement pstmt=con.prepareStatement("select username,password from userdetails where username=? and password=?");
-            pstmt.setString(1,usrn);
-            pstmt.setString(2,pass);
-            ResultSet rs=pstmt.executeQuery();
-            if(rs.next())
-            {
-                response.sendRedirect("projectindex.html");
-            }
-            else
-            {
+    {
+        try       
+        {          
+Class.forName("com.mysql.jdbc.Driver");              
+Connection con = DriverManager.getConnection("jdbc:mysql://localhost/dictionary","root","");              
+PreparedStatement pstmt=con.prepareStatement("insert into dict values(?,?)");
+        pstmt.setString(1,wd);
+        pstmt.setString(2,mn);
+        int i=pstmt.executeUpdate();
+if(i>0)
+{
+    out.println("<!DOCTYPE html>");
+    out.println("<html>");
+    out.println("<body style=\"color:white;background-color:#689F38;font-family:Arial;font-size:25px;align:center;\">");
+    out.println("<h2>Successfully</h2>");
+    out.println("<div style=\"background-color:white;color:#689F38;\">");
+    out.println("<h2>Click the below link to search word</h2>");
+    out.println("<a href=oldict.html style=\"color:#689F38; text-decoration:none;\">Find Word</a>");
+    out.println("</div>");
+    out.println("</body>");
+    out.println("</html>");
+}
+else
+{
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<body style=\"color:white;background-color:#689F38;font-family:Arial;font-size:25px;align:center;\">");
-            out.println("<h1>Login failed username or password incorrect.</h1>");
-            out.println("<a href=registration.html style=\"color:white; text-decoration:none;\">Register</a>");
+            out.println("<h1>Unsuccessful please try again later.</h1>");
+            out.println("<div style=\"background-color:white;color:#689F38;\">");
+            out.println("<a href=\newword.html style=\"color:white; text-decoration:none;\">Back</a>");
+            out.println("</div>");
             out.println("</body>");
             out.println("</html>"); 
-            }
-            }
-            catch(SQLException e)        
-            {          
-            out.println(e);
-            }
-            catch(ClassNotFoundException e)
-            {
-            out.println(e);
-            } 
-        }
 }
-        
+        }
+        catch(SQLException e)        
+        {
+            out.println(e);
+        }    
+        catch(ClassNotFoundException e)
+        {
+            out.println(e);
+        } 
+    }
+        processRequest(request, response);
+    }
 
     /**
      * Returns a short description of the servlet.

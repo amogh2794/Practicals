@@ -108,6 +108,14 @@
         <servlet-name>addemp</servlet-name>
         <servlet-class>addemp</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>meaning</servlet-name>
+        <servlet-class>meaning</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>addwrd</servlet-name>
+        <servlet-class>addwrd</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>NewServlet</servlet-name>
         <url-pattern>/NewServlet</url-pattern>
@@ -207,6 +215,14 @@
     <servlet-mapping>
         <servlet-name>addemp</servlet-name>
         <url-pattern>/addemp</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>meaning</servlet-name>
+        <url-pattern>/meaning</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>addwrd</servlet-name>
+        <url-pattern>/addwrd</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
