@@ -126,7 +126,7 @@ public class paydetails extends HttpServlet {
             out.println("<tr><td>Employee ID: "+emid+"</td><td>PAN NO: "+pno+"</td></tr>");
             out.println("<tr><td>Employee Name: "+nm+"</td><td>Department: "+dpt+"</td></tr>");
             out.println("<tr><td>Designation: "+des+"</td><td>Date of Birth: "+dob+"</td></tr>"); 
-            out.println("<hr style=\"color=#689F38\"/>");
+            out.println("<hr style=\"color=#689F38\">");
             out.println("<tr><td>Basic Salary: "+bsal+"</td></tr>");
             out.println("<tr><td>DA: "+da+"</td></tr>"); 
             out.println("<tr><td>HRA: "+hra+"</td><td>Tax Pay: "+tax+"</td></tr>");
@@ -140,7 +140,17 @@ public class paydetails extends HttpServlet {
             }
              else
             {
-                out.println("Incorrect/Invalid Employee ID ");
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("</head>");
+            out.println("<body style=\"color:white;background-color:#689F38;font-family:Arial;font-size:25px;text-align:center;\">");                    
+            out.println("<div style=\"color:#689F38;background-color:white;font-family:Arial;border-radius:5px;text-align:center;\">");
+            out.println("Incorrect/Invalid Employee ID<br> ");
+            out.println("</div>");
+            out.println("<a href=\"payroll.html\" style=\"text-decoration:none;color:white;text-align:center\">Back</a>");
+            out.println("</body>");
+            out.println("</html>");
             }
             }
             catch(SQLException e)        

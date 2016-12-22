@@ -100,7 +100,7 @@ public class resultstatus extends HttpServlet {
             out.println("<div style=\"color:#689F38;background-color:white;font-family:Arial;align:center;border-radius:5px;\"id=\"div1\">");
             
             
-            while (rs.next()) {
+            if(rs.next()) {
              //rs.getString("seatno");
              sub1x=rs.getInt("sub1ex");
              sub2x=rs.getInt("sub2ex");
@@ -214,7 +214,23 @@ public class resultstatus extends HttpServlet {
             out.println("</html>");
             
              
-            }}
+            }
+            else
+            {
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("</head>");
+            out.println("<body style=\"color:white;background-color:#689F38;font-family:Arial;font-size:25px;text-align:center;\">");                    
+            out.println("<div style=\"color:#689F38;background-color:white;font-family:Arial;border-radius:5px;text-align:center;\">");
+            out.println("Incorrect/Invalid Seat No.<br> ");
+            out.println("<a href=\"olresult.html\" style=\"text-decoration:none;color:#689F38;text-align:center\">Back</a>");
+            out.println("</div>");
+            
+            out.println("</body>");
+            out.println("</html>"); 
+            }
+            }
             catch(SQLException e)        
             {
                 out.println(e);
