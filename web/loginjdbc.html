@@ -14,22 +14,24 @@ and open the template in the editor.
     <body>
         <form action="loginjdb" method="post">
         <div style="margin:auto;" class="regmain1">
+            <a href="registration.html" style="color:white; text-align: center;float:right;text-decoration: none;">Register</a><br>
             <h1 style="color:white; text-align: center;">Login Page</h1>
             <table align="center">
                 <tr>
                     <td>Enter username:</td>
-                    <td><input type="text" placeholder="Username" name="un" class="txtbx" ></td>
+                    <td><input type="text" placeholder="Username" name="un" class="txtbx" required ></td>
                 </tr>
                 <tr>
                     <td>Password:</td>
-                    <td><input type="password" placeholder="Password" name="pd" class="txtbx" ></td>
+                    <td><input type="password" placeholder="Password" name="pd" class="txtbx" required ></td>
                 </tr>
                 <tr>
                     <td><input type="submit" value="Login" class="btn"></td>
                     <td><input type="reset" value="Reset" class="btn"></td>
                 </tr>
-                
             </table><br><br>
+            
+            
         </div>
         </form>
     </body>
