@@ -97,7 +97,7 @@ public class resultstatus extends HttpServlet {
             out.println("</head>");
             out.println("<body style=\"color:white;background-color:#689F38;font-family:Arial;font-size:25px;align:center;\">");                    
             out.println("<h1 align='center'>Marksheet</h1><br>");
-            out.println("<div style=\"color:#689F38;background-color:white;font-family:Arial;align:center;border-radius:5px;\"id=\"div1\">");
+            out.println("<div style=\"color:#689F38;background-color:white;font-family:Arial;text-align:center;border-radius:5px;\"id=\"div1\">");
             
             
             if(rs.next()) {
@@ -176,7 +176,7 @@ public class resultstatus extends HttpServlet {
               // if(sub1x<50 || sub2x<50||sub3x<50 || sub4x<50||sub5x<50 || sub1i<50||sub2i<50 || sub3i<50||sub4i<50 || sub5i<50||pr1<50||pr2<50||pr3<50)
              //{out.println("<div id=\"div1\">");
                 out.println("<h2>Congatulations "+rs.getString("firstname")+" you have secured "+grd+" grade</h2><br>");
-                out.println("<input type=\"submit\" name=\"viewmks\" value=\"View Marks\" onclick=\"showdetails()\">");
+                out.println("<input type=\"submit\" name=\"viewmks\" value=\"View Marks\" onclick=\"showdetails()\"><br><br>");
                 out.println("</div>");
                 out.println("<div style=\"color:#689F38;background-color:white;font-family:TimesNewRoman;align:center; display:none;border-radius:5px;\"id=\"div2\">"+"<br>");
                 out.println("<table border=1>");

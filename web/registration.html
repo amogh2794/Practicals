@@ -10,9 +10,22 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width">
         <link rel="stylesheet" href="regcss.css" type="text/css">
+        <script>
+            function chkPass(){
+            var pas=document.getElementById('pass');
+            var cpas=document.getElementById('cpass');
+            if(pas!==cpass){
+                alert("Password & Confirm Password must be same");
+            }
+            
+            else{
+                window.location="registration.html";
+            }
+        }
+            </script>
     </head>
     <body>
-        <form method="post" action="register">
+        <form method="post" >
         <div  align="center">
             <div class="regmain1">
                 <h1 style="color:white;">Details</h1>
@@ -28,7 +41,7 @@ and open the template in the editor.
                             <label>Password:</label>  
                         </td>
                         <td>
-                            <input type="password" placeholder="Password" name="txtpass" class="txtbx" required>
+                            <input type="password" placeholder="Password" name="txtpass" class="txtbx" id="pass" required>
                         </td>
                     </tr> 
                     <tr>
@@ -36,7 +49,7 @@ and open the template in the editor.
                             <label>Confirm Password:</label>
                         </td>
                         <td>
-                            <input type="password" placeholder="Confirm Password" name="txtconpass" class="txtbx" required>
+                            <input type="password" placeholder="Confirm Password" name="txtconpass" class="txtbx" id="cpass" required>
                         </td>
                     </tr>
                     <tr>
@@ -98,7 +111,7 @@ and open the template in the editor.
                         </td>
                     </tr>
                 </table><br>
-                <input type="submit" name="submit" value="Register"><br><br>
+                <input type="submit" name="submit" value="Register" onclick="chkPass()"><br><br>
                 <a href="loginjdbc.html" style="text-decoration:none; color:white; ">Back</a>
             </div><br><br>
           
